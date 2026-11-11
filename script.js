@@ -10,6 +10,7 @@
     initReveal();
     initFilters();
     initLightbox();
+    initKnowledge();
     if (!reduceMotion) {
       initSky();
       if (finePointer) {
@@ -92,6 +93,44 @@
         });
       });
     });
+  }
+
+  // "Krag wiedzy": stone categories on the left switch the panel on the right (all panels stay visible without JS)
+  function initKnowledge() {
+    var nav = document.querySelector('.kcats');
+    if (!nav) return;
+    var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.kpanel'));
+    function show(id, animate) {
+      var found = false;
+      panels.forEach(function (p) {
+        var on = p.id === id;
+        p.hidden = !on;
+        if (on) {
+          found = true;
+          if (animate && !reduceMotion && p.animate) {
+            p.animate([{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'none' }],
+              { duration: 350, easing: 'cubic-bezier(.2,.7,.2,1)' });
+          }
+        }
+      });
+      links.forEach(function (a) {
+        var on = a.getAttribute('href') === '#' + id;
+        a.classList.toggle('is-active', on);
+        if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+      });
+      return found;
+    }
+    links.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var id = a.getAttribute('href').slice(1);
+        show(id, true);
+        if (history.replaceState) history.replaceState(null, '', '#' + id);
+      });
+    });
+    var start = location.hash.slice(1);
+    if (!start || !show(start, false)) show(panels[0].id, false);
   }
 
   // Click a product photo to see it larger
