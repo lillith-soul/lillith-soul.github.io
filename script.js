@@ -135,7 +135,7 @@
     function norm(s) { return s.toLowerCase().replace(/ł/g, 'l').normalize('NFD').replace(/[̀-ͯ]/g, ''); }
     var texts = panels.map(function (p) {
       var t = p.querySelector('h2').textContent;
-      p.querySelectorAll('.article').forEach(function (a) { t += ' ' + a.textContent; });
+      p.querySelectorAll('.article,.kdesc,.ksub').forEach(function (a) { t += ' ' + a.textContent; });
       return norm(t);
     });
     function filter() {
