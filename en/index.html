@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lillith Soul: handmade jewellery from natural stones</title>
   <meta name="description" content="Lillith Soul is a handmade jewellery brand using natural stones. Find us on Instagram and Facebook.">
-  <meta name="theme-color" content="#FDF8F1">
+  <meta name="theme-color" content="#10081C">
   <link rel="icon" type="image/png" href="../images/favicon.png">
   <link rel="canonical" href="https://lillith-soul.github.io/en/">
   <link rel="alternate" hreflang="pl" href="https://lillith-soul.github.io/">
@@ -22,11 +22,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Marcellus&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="../script.js" defer></script>
 </head>
 <body>
+  <div class="progress" aria-hidden="true"></div>
+
   <nav class="nav" aria-label="Main">
     <a class="nav-brand" href="#top"><img src="../images/emblem.png" width="32" height="32" alt=""><span>Lillith Soul</span></a>
     <div class="nav-right">
+
       <a href="#about">About</a>
       <a href="#follow">Find us</a>
       <a href="../index.html" hreflang="pl" lang="pl">PL</a>
@@ -35,37 +40,40 @@
   </nav>
 
   <header class="hero" id="top">
+    <canvas class="hero-sky" aria-hidden="true"></canvas>
     <div class="hero-grid">
       <div class="hexes" aria-hidden="true">
-        <div class="hex hx1"><svg viewBox="0 0 100 100"><path d="M50 18 72 40 50 84 28 40Z M28 40H72 M50 18 40 40 50 84 M50 18 60 40 50 84"/></svg></div>
-        <div class="hex hx2"><svg viewBox="0 0 100 100"><path d="M50 18 72 40 50 84 28 40Z M28 40H72 M50 18 40 40 50 84 M50 18 60 40 50 84"/></svg></div>
-        <div class="hex hx3"><svg viewBox="0 0 100 100"><path d="M50 18 72 40 50 84 28 40Z M28 40H72 M50 18 40 40 50 84 M50 18 60 40 50 84"/></svg></div>
+        <div class="hex hx1" data-parallax="22"><svg viewBox="0 0 100 100"><path d="M50 18 72 40 50 84 28 40Z M28 40H72 M50 18 40 40 50 84 M50 18 60 40 50 84"/></svg></div>
+        <div class="hex hx2" data-parallax="32"><svg viewBox="0 0 100 100"><path d="M50 18 72 40 50 84 28 40Z M28 40H72 M50 18 40 40 50 84 M50 18 60 40 50 84"/></svg></div>
+        <div class="hex hx3" data-parallax="14"><svg viewBox="0 0 100 100"><path d="M50 18 72 40 50 84 28 40Z M28 40H72 M50 18 40 40 50 84 M50 18 60 40 50 84"/></svg></div>
       </div>
       <div class="hero-text">
-        <h1>Lillith Soul</h1>
-        <p class="lead">Handmade jewellery from natural stones</p>
-        <div class="emblem-glow"><img class="emblem" src="../images/emblem.png" width="720" height="720" alt="Lillith Soul logo: a purple crescent moon and an amethyst"></div>
-        <p class="intro">Lillith Soul is a handmade jewellery brand using natural stones. New pieces and inspiration are on our social media.</p>
-        <a class="btn" href="https://www.instagram.com/lillith_soul" rel="noopener">See us on Instagram</a>
+        <h1 class="reveal">Lillith Soul</h1>
+        <p class="lead reveal">Handmade jewellery from natural stones</p>
+        <div class="emblem-glow" data-parallax="16"><img class="emblem" src="../images/emblem.png" width="720" height="720" alt="Lillith Soul logo: a purple crescent moon and an amethyst"></div>
+        <p class="intro reveal">Lillith Soul is a handmade jewellery brand using natural stones. New pieces and inspiration are on our social media.</p>
+        <a class="btn reveal" href="https://www.instagram.com/lillith_soul" rel="noopener">See us on Instagram</a>
       </div>
     </div>
   </header>
 
   <section class="section" id="about">
-    <p class="eyebrow">The brand</p>
-    <h2>About Lillith Soul</h2>
-    <p class="text">Handmade jewellery, natural stones, a moonlit mood and attention to detail. Photos, new designs and orders: message us on Instagram or Facebook.</p>
+    <p class="eyebrow reveal">The brand</p>
+    <h2 class="reveal">About Lillith Soul</h2>
+    <p class="text reveal">Handmade jewellery, natural stones, a moonlit mood and attention to detail. Photos, new designs and orders: message us on Instagram or Facebook.</p>
   </section>
 
   <section class="section alt" id="follow">
-    <p class="eyebrow">Social media</p>
-    <h2>Find us</h2>
+    <p class="eyebrow reveal">Social media</p>
+    <h2 class="reveal">Find us</h2>
     <div class="cards">
-      <a class="card" href="https://www.instagram.com/lillith_soul" rel="noopener"><strong>Instagram</strong><span>@lillith_soul</span><em>Jewellery photos and news.</em></a>
-      <a class="card" href="https://www.facebook.com/profile.php?id=61554640782838" rel="noopener"><strong>Facebook</strong><span>Lillith Soul</span><em>Updates and messages.</em></a>
+      <a class="card reveal" href="https://www.instagram.com/lillith_soul" rel="noopener"><strong>Instagram</strong><span>@lillith_soul</span><em>Jewellery photos and news.</em></a>
+      <a class="card reveal" href="https://www.facebook.com/profile.php?id=61554640782838" rel="noopener"><strong>Facebook</strong><span>Lillith Soul</span><em>Updates and messages.</em></a>
     </div>
   </section>
 
   <footer class="footer"><p>&copy; 2026 Lillith Soul. All rights reserved.</p></footer>
+
+  <dialog class="lightbox"><button type="button" class="lightbox-close" aria-label="Close">&times;</button><img alt=""></dialog>
 </body>
 </html>

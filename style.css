@@ -1,45 +1,75 @@
-:root{--cream:#fdf8f1;--ink:#5c4552;--muted:#85707c;--lilac:#c58fd3;--lilac-d:#9b5fae;--pink:#f4d6e4;--brown:#6b4f4f;--line:rgba(155,95,174,.22)}
+:root{--bg:#10081c;--bg2:#1a0f2b;--gold:#d4af6a;--gold-l:#f6dda0;--text:#efe8f6;--muted:#b4a6c6;--line:rgba(212,175,106,.3)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;color:var(--ink);font:400 16px/1.7 Montserrat,system-ui,sans-serif;background:
-  radial-gradient(circle at 0 0,rgba(236,170,214,.5),transparent 38%),
-  radial-gradient(circle at 100% 0,rgba(255,226,236,.8),transparent 42%),
-  radial-gradient(circle at 100% 100%,rgba(197,143,211,.42),transparent 36%),
-  radial-gradient(circle at 0 100%,rgba(244,214,228,.6),transparent 34%),var(--cream) fixed}
+body{margin:0;color:var(--text);font:400 16px/1.7 Montserrat,system-ui,sans-serif;background:radial-gradient(ellipse at 50% -10%,#2b1434 0,var(--bg) 60%) fixed}
 h1,h2{margin:0;font-weight:400}
 a{color:inherit;text-decoration:none}
-.nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 20px;background:rgba(253,248,241,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav-brand{display:flex;align-items:center;gap:10px;font:italic 700 1.4rem "Lobster Two",cursive;color:var(--lilac-d)}
+.nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 20px;background:rgba(16,8,28,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-brand{display:flex;align-items:center;gap:10px;font:italic 700 1.4rem "Lobster Two",cursive;color:var(--gold-l)}
 .nav-brand img{background:#fff;border-radius:50%}
 .nav-right{display:flex;align-items:center;gap:16px;font-size:.85rem;flex-wrap:wrap;justify-content:flex-end}
-.nav-right a{color:var(--muted)}.nav-right a:hover,.nav-right a[aria-current]{color:var(--lilac-d)}
+.nav-right a{color:var(--muted)}.nav-right a:hover,.nav-right a[aria-current]{color:var(--gold-l)}
 .hero{padding:40px 20px 70px}
 .hero-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px}
 .hero-text{text-align:center}
-.hero h1{font:italic 700 clamp(3.2rem,8vw,5.2rem)/1.1 "Lobster Two",cursive;color:var(--lilac)}
-.lead{font:400 1.05rem/1.6 Marcellus,Georgia,serif;letter-spacing:.14em;text-transform:uppercase;color:var(--lilac);margin:6px auto 10px;max-width:420px}
-.emblem-glow{width:min(300px,80vw);aspect-ratio:1;margin:0 auto;display:grid;place-items:center;background:radial-gradient(circle closest-side,#fff 0,#fff 64%,rgba(246,238,251,.9) 80%,rgba(197,143,211,0) 100%)}
+.hero h1{font:italic 700 clamp(3.2rem,8vw,5.2rem)/1.1 "Lobster Two",cursive;color:var(--gold-l)}
+.lead{font:400 1.05rem/1.6 Marcellus,Georgia,serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:6px auto 10px;max-width:420px}
+.emblem-glow{width:min(300px,80vw);aspect-ratio:1;margin:0 auto;display:grid;place-items:center;background:radial-gradient(circle closest-side,#fff 0,#fff 64%,#ece7f5 76%,#9a8cba 90%,rgba(90,70,140,0) 100%)}
 .emblem{width:84%;height:auto}
 .intro{max-width:460px;margin:8px auto 22px;color:var(--muted)}
-.btn{display:inline-block;padding:12px 28px;border-radius:999px;background:var(--lilac-d);color:#fff;font-weight:600;transition:.2s}
-.btn:hover{background:var(--lilac)}
+.btn{display:inline-block;padding:12px 28px;border-radius:999px;border:1px solid var(--gold);color:var(--gold-l);font-weight:600;transition:.2s}
+.btn:hover{background:var(--gold);color:var(--bg)}
 /* hexagon cluster, echoing the Facebook banner (pointy-top hexagons, decorative) */
 .hexes{--w:170px;--h:calc(var(--w)*1.1547);position:relative;width:calc(var(--w)*2.08);height:calc(var(--h)*1.8);margin:0 auto}
 .hex{position:absolute;width:var(--w);height:var(--h);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center}
-.hex svg{width:56%;fill:rgba(255,255,255,.4);stroke:var(--brown);stroke-width:1.6;stroke-linejoin:round;fill-rule:evenodd}
-.hx1{left:calc(var(--w)*.54);top:0;background:linear-gradient(135deg,#f7dbe8,#e6cdf1)}
-.hx2{left:0;top:calc(var(--h)*.78);background:linear-gradient(135deg,#d9efe2,#efe3f7)}
-.hx3{left:calc(var(--w)*1.08);top:calc(var(--h)*.78);background:linear-gradient(135deg,#e9d4f3,#f9dcc9)}
-.section{padding:70px 20px;text-align:center}.alt{background:rgba(255,255,255,.55)}
-.eyebrow{margin:0 0 6px;font:400 .8rem Marcellus,serif;letter-spacing:.22em;text-transform:uppercase;color:var(--lilac-d)}
-.section h2{font:italic 700 2.6rem "Lobster Two",cursive;margin-bottom:14px;color:var(--lilac)}
+.hex svg{width:56%;fill:rgba(246,221,160,.12);stroke:var(--gold);stroke-width:1.6;stroke-linejoin:round;fill-rule:evenodd}
+.hx1{left:calc(var(--w)*.54);top:0;background:linear-gradient(135deg,#4a2a6a,#2b1744)}
+.hx2{left:0;top:calc(var(--h)*.78);background:linear-gradient(135deg,#3a2258,#24143c)}
+.hx3{left:calc(var(--w)*1.08);top:calc(var(--h)*.78);background:linear-gradient(135deg,#5a3478,#321a4c)}
+.section{padding:70px 20px;text-align:center}.alt{background:rgba(255,255,255,.04)}
+.eyebrow{margin:0 0 6px;font:400 .8rem Marcellus,serif;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.section h2{font:italic 700 2.6rem "Lobster Two",cursive;margin-bottom:14px;color:var(--gold-l)}
 .text{max-width:620px;margin:0 auto;color:var(--muted)}
 .cards{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:24px}
-.card{display:flex;flex-direction:column;gap:2px;width:260px;padding:24px;border:1px solid var(--line);border-radius:18px;background:#fff;transition:.2s}
-.card:hover{transform:translateY(-4px);border-color:var(--lilac);box-shadow:0 10px 26px rgba(155,95,174,.15)}
-.card strong{font:italic 700 1.6rem "Lobster Two",cursive;color:var(--lilac-d)}
+.card{display:flex;flex-direction:column;gap:2px;width:260px;padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--bg2);transition:.2s}
+.card:hover{border-color:var(--gold);box-shadow:0 10px 30px rgba(0,0,0,.35),0 0 24px rgba(212,175,106,.12)}
+.card strong{font:italic 700 1.6rem "Lobster Two",cursive;color:var(--gold-l)}
 .card em{font-style:normal;color:var(--muted);font-size:.9rem}
 .footer{padding:28px 20px;text-align:center;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line)}
 .footer p{margin:0}
+/* interactivity */
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:20;background:linear-gradient(90deg,var(--gold),var(--gold-l));transform:scaleX(0);transform-origin:left}
+.nav.is-scrolled{box-shadow:0 6px 24px rgba(0,0,0,.4)}
+.nav-right a.is-current{color:var(--gold-l)}
+.hero{position:relative;overflow:hidden}
+.hero-sky{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero-grid{position:relative;z-index:1}
+.js .reveal{opacity:0;translate:0 24px;transition:opacity .7s var(--d,0s),translate .7s var(--d,0s)}
+.js .reveal.is-in{opacity:1;translate:0 0}
+.hex{animation:hexfloat 7s ease-in-out infinite;transition:filter .3s}
+.hx2{animation-delay:-2.3s}.hx3{animation-delay:-4.6s}
+.hex:hover{filter:brightness(1.25)}
+@keyframes hexfloat{50%{transform:translateY(-8px)}}
+.card{position:relative;overflow:hidden;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .15s ease-out,border-color .2s,box-shadow .2s}
+.card::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .25s;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(246,221,160,.16),transparent 55%)}
+.card:hover::after{opacity:1}
+.is-hidden{display:none!important}
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:6px 0 8px}
+.chip{font:600 .85rem Montserrat,sans-serif;padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--gold);color:var(--gold-l)}
+.chip.is-active{background:var(--gold);border-color:var(--gold);color:var(--bg)}
+.grid{max-width:1000px;margin:24px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,300px));justify-content:center;gap:22px;text-align:left}
+.grid .card{width:auto;gap:10px}
+.grid .card h3{margin:0;font:italic 700 1.5rem "Lobster Two",cursive;color:var(--gold-l)}
+.grid .card p{margin:0;color:var(--muted);font-size:.92rem}
+.grid .btn{align-self:flex-start;margin-top:auto;padding:9px 20px;font-size:.85rem}
+.card-media{display:block;width:100%;padding:0;border:0;background:none;border-radius:12px;overflow:hidden;cursor:zoom-in}
+.card-media img{display:block;width:100%;aspect-ratio:1;object-fit:cover;transition:transform .5s}
+.card:hover .card-media img{transform:scale(1.05)}
+.lightbox{border:0;padding:0;background:transparent;max-width:min(92vw,900px);max-height:92vh;overflow:visible}
+.lightbox::backdrop{background:rgba(10,4,20,.88)}
+.lightbox img{display:block;max-width:100%;max-height:88vh;border-radius:12px;margin:auto}
+.lightbox-close{position:absolute;top:-14px;right:-14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--gold);background:var(--bg);color:var(--gold-l);font-size:1.3rem;line-height:1;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.hex{animation:none}.card{transition:none}.js .reveal{opacity:1;translate:none;transition:none}}
 @media (max-width:820px){
   .hero-grid{grid-template-columns:1fr;gap:10px}
   .hexes{--w:100px;order:2;margin-top:10px}
