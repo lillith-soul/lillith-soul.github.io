@@ -122,3 +122,5 @@ a{color:inherit;text-decoration:none}
 .kpanel{scroll-margin-top:90px}
 .kstone-solo{grid-template-columns:1fr}
 .kstone-solo .kdesc{max-width:640px}
+.kstone-img.is-photo-light img{border-radius:14px}
+.kstone-img.is-portrait{max-width:300px;justify-self:center}
