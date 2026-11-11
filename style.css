@@ -119,3 +119,4 @@ a{color:inherit;text-decoration:none}
 }
 /* real photos (black studio background): blend the black into the page, round the corners */
 .kstone-img.is-photo img{filter:none;mix-blend-mode:screen;border-radius:14px}
+.kpanel{scroll-margin-top:90px}
