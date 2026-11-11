@@ -84,8 +84,8 @@ a{color:inherit;text-decoration:none}
 .article p{margin:0 0 12px;color:var(--muted)}
 .article p:last-child{margin-bottom:0}
 .kcols{display:grid;grid-template-columns:210px 1fr;gap:44px;margin:34px 0 40px;text-align:left}
-.kcats{display:flex;flex-direction:column;gap:2px;align-self:start;position:sticky;top:76px;max-height:calc(100vh - 100px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
-.kcats a{padding:8px 16px;border-left:2px solid var(--line);color:var(--muted);font:400 1rem Marcellus,Georgia,serif;letter-spacing:.06em;transition:.2s}
+.kcats{display:flex;flex-direction:column;gap:1px;align-self:start}
+.kcats a{padding:6px 14px;border-left:2px solid var(--line);color:var(--muted);font:400 1rem Marcellus,Georgia,serif;letter-spacing:.06em;transition:.2s}
 .kcats a:hover{color:var(--gold-l);border-left-color:var(--gold)}
 .kcats a.is-active{color:var(--gold-l);border-left-color:var(--gold);background:linear-gradient(90deg,rgba(212,175,106,.14),transparent)}
 .kpanel h2{margin:0 0 14px;font:italic 700 2.1rem "Lobster Two",cursive;color:var(--gold-l)}
@@ -99,3 +99,10 @@ a{color:inherit;text-decoration:none}
   .kcats a{border-left:0;border-bottom:2px solid var(--line);padding:8px 14px}
   .kcats a:hover,.kcats a.is-active{border-bottom-color:var(--gold)}
 }
+.kcats a{font-size:.95rem}
+.ksearch{display:none;max-width:460px;margin:26px auto 0}
+.js .ksearch{display:block}
+.ksearch input{width:100%;padding:12px 20px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--text);font:400 1rem Montserrat,sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
+.ksearch input::placeholder{color:var(--muted)}
+.ksearch input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,106,.15)}
+.knone[hidden]{display:none}

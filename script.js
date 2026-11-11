@@ -129,6 +129,49 @@
         if (history.replaceState) history.replaceState(null, '', '#' + id);
       });
     });
+    // Text search: filters the list by stone name and article text (ignores Polish diacritics and the "coming soon" placeholder)
+    var input = document.querySelector('.ksearch input');
+    var none = document.querySelector('.knone');
+    function norm(s) { return s.toLowerCase().replace(/ł/g, 'l').normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+    var texts = panels.map(function (p) {
+      var t = p.querySelector('h2').textContent;
+      p.querySelectorAll('.article').forEach(function (a) { t += ' ' + a.textContent; });
+      return norm(t);
+    });
+    function filter() {
+      var q = norm(input.value.trim());
+      var first = -1, activeVisible = false;
+      links.forEach(function (a, i) {
+        var match = !q || texts[i].indexOf(q) !== -1;
+        a.classList.toggle('is-hidden', !match);
+        if (match && first < 0) first = i;
+        if (match && a.classList.contains('is-active')) activeVisible = true;
+      });
+      if (first < 0) {
+        panels.forEach(function (p) { p.hidden = true; });
+        none.hidden = false;
+        return;
+      }
+      none.hidden = true;
+      var shown = panels.some(function (p) { return !p.hidden; });
+      if (!activeVisible) {
+        show(panels[first].id, true);
+      } else if (!shown) {
+        // panels were hidden by an earlier "no results": bring back the one that is still marked active
+        links.forEach(function (a, i) { if (a.classList.contains('is-active')) show(panels[i].id, true); });
+      }
+    }
+    if (input && none) {
+      input.addEventListener('input', filter);
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          var vis = links.filter(function (a) { return !a.classList.contains('is-hidden'); });
+          if (vis.length) vis[0].click();
+        }
+      });
+    }
+
     var start = location.hash.slice(1);
     if (!start || !show(start, false)) show(panels[0].id, false);
   }
