@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lillith-soul.github.io/sitemap.xml
