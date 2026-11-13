@@ -100,14 +100,16 @@
       if (soon) soon.hidden = n > 0;
     }
     chips.forEach(function (chip) {
-      chip.addEventListener('click', function () { apply(chip.getAttribute('data-filter')); });
+      chip.addEventListener('click', function () {
+        var f = chip.getAttribute('data-filter');
+        apply(f);
+        try { history.replaceState(null, '', f === 'all' ? location.pathname : '#' + f); } catch (e) {}
+      });
     });
-    document.querySelectorAll('[data-kind-link]').forEach(function (a) {
-      a.addEventListener('click', function () { apply(a.getAttribute('data-kind-link')); });
-    });
-    document.querySelectorAll('a[href="#products"]:not([data-kind-link])').forEach(function (a) {
-      a.addEventListener('click', function () { apply('all'); });
-    });
+    // arrive from a hexagon icon on the home page: kolekcja/#kolczyki
+    function fromHash() { apply(location.hash.slice(1) || 'all'); }
+    fromHash();
+    window.addEventListener('hashchange', fromHash);
   }
 
   // "Krag wiedzy": stone categories on the left switch the panel on the right (all panels stay visible without JS)
