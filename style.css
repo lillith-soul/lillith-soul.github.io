@@ -145,3 +145,17 @@ a.hex{cursor:pointer}
 a.hex:focus-visible{outline:2px solid var(--gold-l);outline-offset:-4px}
 .products-soon{margin-top:28px}
 .page>.btn{margin-top:56px}
+.pview{border:1px solid var(--line);border-radius:18px;padding:0;background:var(--bg2);color:var(--text,inherit);width:min(92vw,640px);max-height:92vh;overflow:hidden;text-align:left;position:relative}
+.pview[open]{display:flex;flex-direction:column}
+.pview::backdrop{background:rgba(10,4,20,.88)}
+.pview>img{display:block;width:100%;flex:0 1 auto;min-height:0;max-height:55vh;object-fit:contain;background:#0d0716}
+.pview .lightbox-close{position:absolute;top:10px;right:10px;z-index:2}
+.pv-body{padding:22px 26px 28px;overflow:auto;flex:1 1 auto;min-height:0}
+.pv-body h3{margin:0 0 4px;font:italic 700 1.9rem "Lobster Two",cursive;color:var(--gold-l)}
+.pv-body .price{margin:0 0 14px;font:600 1.15rem Montserrat,sans-serif;color:var(--gold-l)}
+.pv-desc{color:var(--muted);line-height:1.65;margin-bottom:20px}
+.pv-desc p{margin:0 0 12px}
+.pv-desc ul{margin:0 0 14px;padding-left:20px}
+.pv-desc li{margin:0 0 8px}
+.pv-desc strong{color:var(--gold-l);font-weight:600}
+.card-media{position:relative}

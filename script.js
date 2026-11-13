@@ -9,6 +9,7 @@
     initNav();
     initReveal();
     initFilters();
+    initProductView();
     initLightbox();
     initKnowledge();
     if (!reduceMotion) {
@@ -203,6 +204,38 @@
         img.src = btn.getAttribute('data-full');
         img.alt = btn.getAttribute('aria-label') || '';
         box.showModal();
+      });
+    });
+    box.addEventListener('click', function (e) { if (e.target === box || e.target.closest('.lightbox-close')) box.close(); });
+  }
+
+  // Collection: click a product photo -> larger photo with the description below it
+  function initProductView() {
+    var box = document.querySelector('.pview');
+    if (!box || !box.showModal) return;
+    var img = box.querySelector('img');
+    var title = box.querySelector('h3');
+    var price = box.querySelector('.price');
+    var desc = box.querySelector('.pv-desc');
+    var cta = box.querySelector('.btn');
+    document.querySelectorAll('#products .card-media').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var card = btn.closest('.card');
+        var det = card.querySelector('.card-detail');
+        var src = card.querySelector('.card > p:not(.price)');
+        var p = card.querySelector('.price');
+        var b = card.querySelector('.buy .btn');
+        img.src = btn.getAttribute('data-full');
+        img.alt = btn.getAttribute('aria-label') || '';
+        title.textContent = card.querySelector('h3').textContent;
+        price.textContent = p ? p.textContent : '';
+        price.hidden = !p;
+        desc.innerHTML = det ? det.innerHTML : (src ? '<p>' + src.innerHTML + '</p>' : '');
+        cta.textContent = b ? b.textContent : '';
+        cta.href = b ? b.href : '#';
+        cta.hidden = !b;
+        box.showModal();
+        box.scrollTop = 0;
       });
     });
     box.addEventListener('click', function (e) { if (e.target === box || e.target.closest('.lightbox-close')) box.close(); });
