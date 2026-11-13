@@ -69,29 +69,44 @@
     els.forEach(function (el) { io.observe(el); });
   }
 
-  // Product category filter
+  // Product category filter: chips, and the hexagon icons / menu link on top of the page
   function initFilters() {
     var chips = document.querySelectorAll('.chip');
     var cards = document.querySelectorAll('#products .card');
-    chips.forEach(function (chip) {
-      chip.addEventListener('click', function () {
-        var f = chip.getAttribute('data-filter');
-        chips.forEach(function (c) {
-          var on = c === chip;
-          c.classList.toggle('is-active', on);
-          c.setAttribute('aria-pressed', on ? 'true' : 'false');
-        });
-        cards.forEach(function (card, i) {
-          var show = f === 'all' || card.getAttribute('data-kind') === f;
-          card.classList.toggle('is-hidden', !show);
-          if (show && !reduceMotion && card.animate) {
+    var soon = document.querySelector('.products-soon');
+    if (!chips.length) return;
+    function apply(f) {
+      var chip = document.querySelector('.chip[data-filter="' + f + '"]');
+      if (!chip) return;
+      var n = 0;
+      chips.forEach(function (c) {
+        var on = c === chip;
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      cards.forEach(function (card) {
+        var show = f === 'all' || card.getAttribute('data-kind') === f;
+        card.classList.toggle('is-hidden', !show);
+        if (show) {
+          if (!reduceMotion && card.animate) {
             card.animate(
               [{ opacity: 0, transform: 'translateY(16px) scale(.97)' }, { opacity: 1, transform: 'none' }],
-              { duration: 450, delay: i * 40, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' }
+              { duration: 450, delay: n * 40, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' }
             );
           }
-        });
+          n++;
+        }
       });
+      if (soon) soon.hidden = n > 0;
+    }
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () { apply(chip.getAttribute('data-filter')); });
+    });
+    document.querySelectorAll('[data-kind-link]').forEach(function (a) {
+      a.addEventListener('click', function () { apply(a.getAttribute('data-kind-link')); });
+    });
+    document.querySelectorAll('a[href="#products"]:not([data-kind-link])').forEach(function (a) {
+      a.addEventListener('click', function () { apply('all'); });
     });
   }
 

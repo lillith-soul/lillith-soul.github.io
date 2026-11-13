@@ -138,3 +138,11 @@ a{color:inherit;text-decoration:none}
 .kdesc,.kpanel .text,.article p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 .kdesc,.kpanel .text,.article p{text-justify:inter-word;word-spacing:-.02em}
 .kpic img.kmain{transform:scale(var(--s,1));transform-origin:center 60%}
+.grid .card p.price{font:600 1.15rem Montserrat,sans-serif;color:var(--gold-l)}
+.buy{display:flex;gap:10px;margin-top:auto}
+.grid .btn{padding:9px 24px;font-size:.85rem}
+.buy .btn:first-child{background:var(--gold);color:var(--bg)}
+.buy .btn:first-child:hover{background:var(--gold-l)}
+a.hex{cursor:pointer}
+a.hex:focus-visible{outline:2px solid var(--gold-l);outline-offset:-4px}
+.products-soon{margin-top:28px}
