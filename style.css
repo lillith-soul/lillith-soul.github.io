@@ -49,6 +49,8 @@ a{color:inherit;text-decoration:none}
 .hex{animation:hexfloat 7s ease-in-out infinite;transition:filter .3s}
 .hx2{animation-delay:-1.8s}.hx3{animation-delay:-3.6s}.hx4{animation-delay:-5.4s}
 .hex:hover{filter:brightness(1.25)}
+button.hex{border:0;padding:0;cursor:zoom-in;font:inherit}
+button.hex:focus-visible{outline:2px solid var(--gold-l);outline-offset:-4px}
 @keyframes hexfloat{50%{transform:translateY(-8px)}}
 .card{position:relative;overflow:hidden;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .15s ease-out,border-color .2s,box-shadow .2s}
 .card::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .25s;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(246,221,160,.16),transparent 55%)}
