@@ -64,7 +64,11 @@ button.hex:focus-visible{outline:2px solid var(--gold-l);outline-offset:-4px}
 .grid .card{width:auto;gap:10px}
 .grid .card h3{margin:0;font:italic 700 1.5rem "Lobster Two",cursive;color:var(--gold-l)}
 .grid .card p{margin:0;color:var(--muted);font-size:.92rem}
-.grid .btn{align-self:flex-start;margin-top:auto;padding:9px 20px;font-size:.85rem}
+.grid .card p.price{font:600 1.15rem Montserrat,sans-serif;color:var(--gold-l)}
+.buy{display:flex;gap:10px;margin-top:auto}
+.grid .btn{padding:9px 24px;font-size:.85rem}
+.buy .btn:first-child{background:var(--gold);color:var(--bg)}
+.buy .btn:first-child:hover{background:var(--gold-l)}
 .card-media{display:block;width:100%;padding:0;border:0;background:none;border-radius:12px;overflow:hidden;cursor:zoom-in}
 .card-media img{display:block;width:100%;aspect-ratio:1;object-fit:cover;transition:transform .5s}
 .card:hover .card-media img{transform:scale(1.05)}
