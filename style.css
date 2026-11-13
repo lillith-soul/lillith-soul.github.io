@@ -159,3 +159,7 @@ a.hex:focus-visible{outline:2px solid var(--gold-l);outline-offset:-4px}
 .pv-desc li{margin:0 0 8px}
 .pv-desc strong{color:var(--gold-l);font-weight:600}
 .card-media{position:relative}
+.kul{margin:0 0 14px;padding-left:20px;text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+.kul li{margin:0 0 10px}
+.kul strong{color:var(--gold-l);font-weight:600}
+.kh{margin:22px 0 10px;font:400 .95rem Marcellus,serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-align:left}
