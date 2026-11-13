@@ -218,13 +218,14 @@
     var price = box.querySelector('.price');
     var desc = box.querySelector('.pv-desc');
     var cta = box.querySelector('.btn');
-    document.querySelectorAll('#products .card-media').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var card = btn.closest('.card');
+    document.querySelectorAll('#products .card-media, #products .card-more').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var card = trigger.closest('.card');
+        var btn = card.querySelector('.card-media');
         var det = card.querySelector('.card-detail');
         var src = card.querySelector('.card > p:not(.price)');
         var p = card.querySelector('.price');
-        var b = card.querySelector('.buy .btn');
+        var b = card.querySelector('.buy a.btn');
         img.src = btn.getAttribute('data-full');
         img.alt = btn.getAttribute('aria-label') || '';
         title.textContent = card.querySelector('h3').textContent;
