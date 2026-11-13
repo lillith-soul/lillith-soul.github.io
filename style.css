@@ -163,3 +163,5 @@ a.hex:focus-visible{outline:2px solid var(--gold-l);outline-offset:-4px}
 .kul li{margin:0 0 10px}
 .kul strong{color:var(--gold-l);font-weight:600}
 .kh{margin:22px 0 10px;font:400 .95rem Marcellus,serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-align:left}
+.grid .card-more{background:var(--gold);color:var(--bg);cursor:pointer;font-family:inherit}
+.grid .card-more:hover{background:var(--gold-l)}
